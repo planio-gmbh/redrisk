@@ -1,4 +1,4 @@
-Redmine::Plugin.register :redrisk do
+Redmine::Plugin.register :redmine_risks do
   name 'Redrisk plugin'
   author 'Role Software'
   description 'This is a risk plugin for Redmine'
