@@ -2,9 +2,6 @@
 
 <%= error_messages_for 'risk' %>
 
-<input id="money_suffix" type='hidden' value="<%= l('money_suffix') %>">
-<input id="money_prefix" type='hidden' value="<%= l('money_prefix') %>">
-
 <div class='box tabular new_issue'>
   <%= form_for(@risk, url: create_risk_path) do |f| %>
       <div class="splitcontentleft">
@@ -28,7 +25,7 @@
         </p>
         <p>
           <%= f.label t('risk.attributes.cost') %>
-          <%= f.text_field :cost, class: 'money_field' %>
+          <%= f.text_field :cost, value: number_to_currency(@risk.cost||0, precision: 0), class: 'money_field', data: { decimal: l(:general_csv_decimal_separator), prefix: l(:money_prefix), suffix: l(:money_suffix) } %>
         </p>
       </div>
       <p>
