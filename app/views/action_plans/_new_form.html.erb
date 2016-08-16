@@ -26,12 +26,12 @@
       </p>
       <p>
         <%= f.label t('action_plan.attributes.term') %>
-        <%= f.text_field :term %>
+        <%= f.date_field :term, size: 10 %>
         <%= calendar_for('action_plan_term') %>
       </p>
       <p>
         <%= f.label t('action_plan.attributes.finish_date') %>
-        <%= f.text_field :finish_date %>
+        <%= f.date_field :finish_date, size: 10 %>
         <%= calendar_for('action_plan_finish_date') %>
       </p>
       <p>

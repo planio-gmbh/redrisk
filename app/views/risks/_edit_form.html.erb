@@ -2,8 +2,8 @@
 
 <%= error_messages_for 'risk' %>
 
-<input id="money_suffix" type='hidden' value="<%= t('money_suffix') %>">
-<input id="money_prefix" type='hidden' value="<%= t('money_prefix') %>">
+<input id="money_suffix" type='hidden' value="<%= l('money_suffix') %>">
+<input id="money_prefix" type='hidden' value="<%= l('money_prefix') %>">
 
 <div class='box tabular new_issue'>
   <%= form_for(@risk, url: update_risk_path(risk_id: @risk.id)) do |f| %>
@@ -70,7 +70,7 @@
       <div class="splitcontentright">
         <p>
           <%= f.label t('risk.attributes.identification_date') %>
-          <%= f.text_field :identification_date %>
+          <%= f.date_field :identification_date, size: 10 %>
           <%= calendar_for('risk_identification_date') %>
         </p>
         <p>
